@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spittr</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/style.css}"></link>
+</head>
+<body>
+    <div class="register">
+        <form method="POST" enctype="multipart/form-data" action="/register">
+            <table width="400" border="1" cellpadding="1">
+                <tr>
+                    <td align="right"><label>选择上传的文件:</label></td>
+                    <td align="left"><input type="file" name="file" accept="text/plain"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="right"><input type="submit" value="上传"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div th:if="${message}">
+        <h3 th:text="${message}"></h3>
+    </div>
+</body>
+</html>
