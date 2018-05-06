@@ -1,0 +1,1 @@
+INSERT INTO user(id, lastname, firstname, address, city) VALUES (1, 'Gates', 'Bill', 'Xuanwumen 10', 'Beijing');
