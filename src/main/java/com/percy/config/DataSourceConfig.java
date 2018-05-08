@@ -3,6 +3,7 @@ package com.percy.config;
 import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -15,8 +16,9 @@ import javax.sql.DataSource;
 @Configuration
 public class DataSourceConfig {
     /* 配置嵌入式内存数据库数据源 */
-    @Bean
-    public EmbeddedDatabase dataSource() {
+    @Bean(destroyMethod = "shutdown")
+    @Profile("dev")
+    public EmbeddedDatabase embeddedDataSource() {
         return new EmbeddedDatabaseBuilder()
                 .setType(EmbeddedDatabaseType.H2)
                 .addScript("classpath:db-schema.sql")
@@ -25,8 +27,8 @@ public class DataSourceConfig {
     }
 
     /* 配置 Apache Commons DBCP 连接池数据源 */
-    @Profile("production")
-    @Bean
+    @Bean(destroyMethod = "close")
+    @Profile("prod")
     public BasicDataSource poolDataSource() {
         BasicDataSource ds = new BasicDataSource();
         ds.setDriverClassName("org.h2.Driver");
@@ -39,8 +41,8 @@ public class DataSourceConfig {
     }
 
     /* JDBC 驱动的数据源 */
-    @Profile("qa")
     @Bean
+    @Profile("qa")
     public DataSource jdbcDataSource() {
         DriverManagerDataSource ds = new DriverManagerDataSource();
         ds.setDriverClassName("org.h2.Driver");

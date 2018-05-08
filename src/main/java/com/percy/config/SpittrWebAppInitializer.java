@@ -1,11 +1,7 @@
 package com.percy.config;
 
-import org.springframework.test.context.ActiveProfiles;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
-
 import javax.servlet.MultipartConfigElement;
-import javax.servlet.ServletContextEvent;
-import javax.servlet.ServletContextListener;
 import javax.servlet.ServletRegistration;
 
 /* 配置 DispatcherServlet 和 Spring 应用上下文.

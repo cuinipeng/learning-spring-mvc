@@ -19,6 +19,9 @@
         <mysql.version>5.1.45</mysql.version>
         <h2.version>1.4.196</h2.version>
         <dbcp.version>1.4</dbcp.version>
+        <mongodb.version>2.0.6.RELEASE</mongodb.version>
+        <redis.version>2.0.6.RELEASE</redis.version>
+        <junit.version>4.12</junit.version>
     </properties>
 
     <dependencies>
@@ -69,7 +72,21 @@
             <artifactId>commons-dbcp</artifactId>
             <version>${dbcp.version}</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-mongodb</artifactId>
+            <version>${mongodb.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-redis</artifactId>
+            <version>${redis.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
