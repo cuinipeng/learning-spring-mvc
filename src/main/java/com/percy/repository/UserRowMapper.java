@@ -1,6 +1,6 @@
 package com.percy.repository;
 
-import entity.User;
+import com.percy.entity.User;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;

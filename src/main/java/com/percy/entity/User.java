@@ -1,4 +1,4 @@
-package entity;
+package com.percy.entity;
 
 public class User {
     private int id;

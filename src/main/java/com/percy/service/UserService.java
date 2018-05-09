@@ -1,7 +1,7 @@
 package com.percy.service;
 
 import com.percy.repository.JdbcUserRepository;
-import entity.User;
+import com.percy.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

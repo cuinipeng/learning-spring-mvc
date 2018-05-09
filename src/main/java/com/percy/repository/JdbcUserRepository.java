@@ -1,6 +1,6 @@
 package com.percy.repository;
 
-import entity.User;
+import com.percy.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.stereotype.Repository;
