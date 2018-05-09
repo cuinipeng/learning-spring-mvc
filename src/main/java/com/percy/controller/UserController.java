@@ -20,7 +20,7 @@ public class UserController {
     Logger logger = LoggerFactory.getLogger(UserController.class);
 
     @RequestMapping(method = RequestMethod.GET)
-    public User getUser(@RequestParam("id") int id) {
+    public User getUser(@RequestParam(value = "id", defaultValue = "1") int id) {
         return userService.findUserById(id);
     }
 }
